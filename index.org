@@ -7,7 +7,6 @@
 #+REVEAL_TRANS: linear
 #+REVEAL_THEME: solarized
 #+REVEAL_HLEVEL: 2
-
 #+Title: Being Fierce: Native Python Modules With Rust
 #+Author: Seeralan Sarvaharman
 #+Email: s.sarvaharman@bristol.ac.uk
@@ -17,20 +16,17 @@
 #+LATEX: \newcommand{\giv}{\,|\,} \newcommand{\arcosh}{\mathrm{arcosh}}
 
 #+reveal_title_slide_background: ./figures/rust-logo.svg
-#+reveal_title_slide_background_OPACITy: 0.2
+#+reveal_title_slide_background_opacity: 0.05
 #+reveal_title_slide_background_REPEAT: repeat
 
 #+reveal_default_slide_background: ./figures/rust-logo.svg
-#+reveal_default_slide_background_OPACITy: 0.2
+#+reveal_default_slide_background_OPACITy: 0.05
 #+reveal_default_slide_background_REPEAT: repeat
 #+REVEAL_EXTRA_CSS: local.css
 
+* What is Rust?
+  
 
-* Why Rust?
-- Fast
-- Memory Safety
-- Open Source
-- Shiny and New
 
 
 #+begin_notes
@@ -44,48 +40,61 @@ But unlike C/C++ rust is very safe, it doesn't crash so you can be
 confident that if your code compiles it will not crash unexpectedly.
 #+end_notes
 
-* How to get started?
-- Find it at [[https://www.rust-lang.org][rust.org]]
-  - Install using rustup 
+* Why Rust?
+- Fast
+- Memory Safety
+- Open Source
+- Shiny and New
 
-- Tooling
-  - Building: Cargo
-    - Rust's version of make
-  - Auto style formating: [[https://github.com/rust-lang/rustfmt][rustfmt]]
-  - Auto completion [[https://github.com/racer-rust/racer][racer]]
-  - Languge server: [[https://github.com/rust-lang/rls][rls]]
-    - [[https://microsoft.github.io/language-server-protocol/][Language Server Protocol]]
+* Getting Started
+- Find it at [[https://www.rust-lang.org][rust.org]]
+
+- Install using rustup 
+
+* Tooling
+- Building: Cargo
+  - Rust's version of make
+- Auto style formating: [[https://github.com/rust-lang/rustfmt][rustfmt]]
+- Auto completion [[https://github.com/racer-rust/racer][racer]]
+- Languge server: [[https://github.com/rust-lang/rls][rls]]
+  - [[https://microsoft.github.io/language-server-protocol/][Language Server Protocol]]
 
 * Stable Rust vs Nightly
 [[https://rust-lang.github.io/rustup-components-history][Rust tool status]]
   
 * Python
-  
-** Advantages
-#+ATTR_REVEAL: :frag (appeaer)
+#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
+*Advantages*
 - Easy to learn
 - Expressive
 - Exisiting Libraries, e.g. numpy, matplotlib
 - Interactive
 - "Glue"
+#+REVEAL_HTML: </div>
 
-
-** Disadvantages
-#+ATTR_REVEAL: :frag (appeaer)
+#+REVEAL_HTML: <div class="column" style="float:right; width:50%">
+*Disadvantages*
 - Global Interpreter Lock
-- *Slow 
+- "Slow"
+#+REVEAL_HTML: </div>
 
-
-
-
-* PyO3  
+* Context: The Two-Language Problem
   
+#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
+#+ATTR_HTML: :height 60%, :width 60%
+[[./figures/julia.svg]] 
+
+#+ATTR_HTML: :height 120%, :width 120%
+[[./figures/cython.svg]] 
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
+#+ATTR_HTML: :height 80%, :width 80%
+[[./figures/numba.svg]] 
+#+REVEAL_HTML: </div>
+
 
 * My Research
-  
-  2
-  
-
 #+begin_src jupyter-python :session rust-demo :results drawer :exports none
 import numpy as np
 import matplotlib.pyplot as pp

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   sodipodi:docname="diagram.svg">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker3768"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path3766"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path855"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Lend-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path855-6"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker3768-5"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3766-3"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-1.1,0,0,-1.1,-1.1,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4715122"
+     inkscape:cx="446.79285"
+     inkscape:cy="759.07226"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="false"
+     inkscape:window-width="2540"
+     inkscape:window-height="1400"
+     inkscape:window-x="0"
+     inkscape:window-y="20"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="104.7734"
+       y="67.415474"
+       id="text12"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         x="104.7734"
+         y="67.415474"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk Medium';text-align:center;text-anchor:middle;stroke-width:0.26458332">Analytic</tspan><tspan
+         sodipodi:role="line"
+         x="104.7734"
+         y="80.644638"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk Medium';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan14">Calculations</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="104.87395"
+       y="150.4341"
+       id="text18"><tspan
+         sodipodi:role="line"
+         id="tspan16"
+         x="104.87395"
+         y="150.4341"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk Medium';text-align:center;text-anchor:middle;stroke-width:0.26458332">Stochastic</tspan><tspan
+         sodipodi:role="line"
+         x="104.87395"
+         y="163.66327"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk Medium';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan20">Simulations</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3768)"
+       d="m 143.84295,154.02183 c 0,0 30.86079,-3.28473 28.9484,-40.81544 -1.43843,-28.229179 -30.20702,-42.973082 -30.20702,-42.973082"
+       id="path3764"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3768-5)"
+       d="m 65.873202,69.796738 c 0,0 -30.86078,3.28473 -28.94839,40.815442 1.43842,28.22918 30.20701,42.97308 30.20701,42.97308"
+       id="path3764-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="104.48181"
+       y="183.85931"
+       id="text18-6"><tspan
+         sodipodi:role="line"
+         x="104.48181"
+         y="183.85931"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk Medium';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan20-9">Rust</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="108.87637"
+       y="26.462309"
+       id="text12-2"><tspan
+         sodipodi:role="line"
+         x="108.87637"
+         y="35.907509"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk Medium';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan14-0" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="104.56108"
+       y="47.319538"
+       id="text12-3"><tspan
+         sodipodi:role="line"
+         x="104.56108"
+         y="47.319538"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'HK Grotesk';-inkscape-font-specification:'HK Grotesk Medium';text-align:center;text-anchor:middle;stroke-width:0.26458332"
+         id="tspan14-06">Sympy</tspan></text>
+  </g>
+</svg>
