@@ -24,20 +24,37 @@
 #+reveal_default_slide_background_REPEAT: repeat
 #+REVEAL_EXTRA_CSS: local.css
 
-* What is Rust?
-  
 
+
+* What is Rust?
+
+#+REVEAL_HTML: <div class="cbox" style="text-align:center;">
+  #+REVEAL_HTML: <div class="column" style="float:left; width:50%; margin:auto">
+  #+ATTR_HTML: :height 50%, :width 50%
+  [[./figures/moz.svg]] 
+  #+ATTR_HTML: :height 50%, :width 50%
+  [[./figures/firefox.svg]] 
+  #+REVEAL_HTML: </div>
+
+  #+REVEAL_HTML: <div class="column" style="float:right; width:50%; margin:auto">
+  #+ATTR_HTML: :height 50%, :width 50%
+  [[./figures/firefox.svg]] 
+  #+ATTR_HTML: :height 50%, :width 50%
+  [[./figures/moz.svg]] 
+  #+REVEAL_HTML: </div>
+#+REVEAL_HTML: </div>
+  
 
 
 #+begin_notes
 Rust is a compiled, strongly typed language.
-
 It is similar to C/C++, in that your code is compiled down to machine
 
 And like C/C++ its is very fast.
 
 But unlike C/C++ rust is very safe, it doesn't crash so you can be
 confident that if your code compiles it will not crash unexpectedly.
+
 #+end_notes
 
 * Why Rust?
@@ -50,6 +67,12 @@ confident that if your code compiles it will not crash unexpectedly.
 - Find it at [[https://www.rust-lang.org][rust.org]]
 
 - Install using rustup 
+
+- RTFM: [[https://doc.rust-lang.org/book/][The Rust Book]]
+
+- [[https://doc.rust-lang.org/rust-by-example/][Rust by example]]
+
+- Cargo 
 
 * Tooling
 - Building: Cargo
@@ -95,7 +118,7 @@ confident that if your code compiles it will not crash unexpectedly.
 
 
 * My Research
-#+begin_src jupyter-python :session rust-demo :results drawer :exports none
+#+begin_src jupyter-python :session rust-demo :results output :exports none
 import numpy as np
 import matplotlib.pyplot as pp
 pp.style.use(["default", "paper"])
@@ -133,9 +156,12 @@ def coverage_sim(n0, p, N, num_trials):
     trial_times[trial] = time
   return trial_times
 
+pp.hist(coverage_sim(3, 0.3, 8, 100), bins=100)
 #+end_src
 
 #+RESULTS:
+[[file:./.ob-jupyter/36bb1327f1c1b4675e4f45e6d5f6f00122b08dd4.png]]
+
 #+begin_notes
 
 pip install maturin matplotlib numpy ipython PyQt5
