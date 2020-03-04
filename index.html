@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/solarized.css" id="theme"/>
 
 <link rel="stylesheet" href="local.css"/>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/lib/css/zenburn.css"/>
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
     if( window.location.search.match( /print-pdf/gi ) ) {
@@ -28,12 +28,12 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05"><h1 class="title">Being Fierce: Native Python Modules With Rust</h1><h2 class="author">Seeralan Sarvaharman</h2><p class="date">Created: 2020-03-04 Wed 17:35</p>
+<section id="sec-title-slide" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05"><h1 class="title">Being Fierce: Native Python Modules With Rust</h1><h2 class="author">Seeralan Sarvaharman</h2><p class="date">Created: 2020-03-04 Wed 19:41</p>
 </section>
 
 <section>
-<section id="slide-org0e8817c" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="org0e8817c">Overview</h2>
+<section id="slide-org5aa6a1d" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org5aa6a1d">Overview</h2>
 <ul>
 <li>Context</li>
 <li>What is Rust?</li>
@@ -47,21 +47,100 @@
 </section>
 </section>
 <section>
-<section id="slide-org0a47b10" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="org0a47b10">What is Rust?</h2>
-<div class="cbox" style="text-align:center;">
+<section id="slide-org9875926" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org9875926">Python</h2>
+<div class="column" style="float:left; width:50%">
+<p>
+<b>Advantages</b>
+</p>
+<ul>
+<li>Easy to learn</li>
+<li>Expressive</li>
+<li>Exisiting Libraries</li>
+<li>Interactive</li>
+<li>"Glue"</li>
+
+</ul>
+</div>
+
+<div class="column" style="float:right; width:50%">
+<p>
+<b>Disadvantages</b>
+</p>
+<ul>
+<li>Global Interpreter Lock</li>
+<li>"Slow"</li>
+
+</ul>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org6b65593" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org6b65593">The Two-Language Problem</h2>
+<div class="column" style="float:left; width:50%">
 
 <div class="figure">
-<p><object type="image/svg+xml" data="./figures/moz.svg" class="org-svg" height="30%," width="30%">
+<p><object type="image/svg+xml" data="./figures/julia.svg" class="org-svg" height="60%," width="60%">
+Sorry, your browser does not support SVG.</object> 
+</p>
+</div>
+
+</div>
+
+<div class="column" style="float:left; width:50%">
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./figures/numba.svg" class="org-svg" height="80%," width="80%">
+Sorry, your browser does not support SVG.</object> 
+</p>
+</div>
+</div>
+
+<div id="cython" style="text-align:center">
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./figures/cython.svg" class="org-svg" height="80%," width="80%">
+Sorry, your browser does not support SVG.</object> 
+</p>
+</div>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org42927f4" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org42927f4">What is Rust?</h2>
+<div class="column" style="float:left; width:50%">
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./figures/moz.svg" class="org-svg" height="50%," width="50%">
 Sorry, your browser does not support SVG.</object> 
 </p>
 </div>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="./figures/firefox.svg" class="org-svg" height="30%," width="30%">
+<p><object type="image/svg+xml" data="./figures/firefox.svg" class="org-svg" height="50%," width="50%">
 Sorry, your browser does not support SVG.</object> 
 </p>
 </div>
+</div>
+
+<div class="column" style="float:right; width:50%">
+<ul>
+<li>Compiled</li>
+<li>Static typing
+<ul>
+<li>Inferred</li>
+
+</ul></li>
+<li>Low-level</li>
+
+</ul>
+
 </div>
 
 
@@ -86,131 +165,143 @@ confident that if your code compiles it will not crash unexpectedly.
 </section>
 </section>
 <section>
-<section id="slide-orgb853ef6" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="orgb853ef6">Why Rust?</h2>
+<section id="slide-org1b4712c" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org1b4712c">Why Rust?</h2>
+<div class="column" style="float:left; width:50%">
 <ul>
 <li>Fast</li>
 <li>Memory Safety</li>
 <li>Open Source</li>
-<li>Multithreading</li>
-<li>Shiny and New</li>
 
 </ul>
+</div>
+
+<div class="column" style="float:right; width:50%">
+<ul>
+<li>Multithreading</li>
+<li>No Garbage Collector</li>
+<li>New and shiny</li>
+
+</ul>
+</div>
 
 </section>
 </section>
 <section>
-<section id="slide-orgec3572b" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="orgec3572b">Getting Started</h2>
+<section id="slide-org5801d01" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org5801d01">Getting Started</h2>
 <ul>
 <li>Find it at <a href="https://www.rust-lang.org">rust.org</a></li>
 
-<li>Install using rustup</li>
+<li>Install using <a href="https://rustup.rs/">rustup</a></li>
 
 <li>RTFM: <a href="https://doc.rust-lang.org/book/">The Rust Book</a></li>
 
 <li><a href="https://doc.rust-lang.org/rust-by-example/">Rust by example</a></li>
 
-<li>Cargo</li>
-
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org6702948" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="org6702948">Tooling</h2>
+<section id="slide-org859db5a" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org859db5a">Hello World!</h2>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd9bdfed" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="orgd9bdfed">Tooling</h2>
 <ul>
 <li>Building: Cargo
 <ul>
 <li>Rust's version of make</li>
 
 </ul></li>
-<li>Auto style formating: <a href="https://github.com/rust-lang/rustfmt">rustfmt</a></li>
-<li>Auto completion <a href="https://github.com/racer-rust/racer">racer</a></li>
-<li>Languge server: <a href="https://github.com/rust-lang/rls">rls</a>
+<li>Package management: Cargo
 <ul>
-<li><a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a></li>
+<li>Rust's version of pip</li>
 
 </ul></li>
+<li>Managing compiler versions: rustup
+<ul>
+<li>Similar to python's virtual environments</li>
+
+</ul></li>
+<li>Auto style formating: <a href="https://github.com/rust-lang/rustfmt">rustfmt</a></li>
+<li>Auto completion <a href="https://github.com/racer-rust/racer">racer</a></li>
+<li>Languge server: <a href="https://github.com/rust-lang/rls">rls</a></li>
+
+</ul>
+</section>
+<section id="slide-orgad2d2cc" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h4 id="orgad2d2cc"><a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a></h4>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-org0fcd16b" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org0fcd16b">Stable Rust vs Nightly</h2>
+<ul>
+<li>We need nightly</li>
+<li>Occasionally tools and crates break</li>
+<li><a href="https://rust-lang.github.io/rustup-components-history">Rust tool status</a></li>
 
 </ul>
 
-</section>
-</section>
-<section>
-<section id="slide-org17b6a5e" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="org17b6a5e">Stable Rust vs Nightly</h2>
-<p>
-<a href="https://rust-lang.github.io/rustup-components-history">Rust tool status</a>
-</p>
+
 
 </section>
 </section>
 <section>
-<section id="slide-org809e0e5" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="org809e0e5">Python</h2>
+<section id="slide-slide_1" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="slide_1"><a id="org0565698"></a>My Research</h2>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./figures/diagram.svg" class="org-svg" height="50%," width="50%">
+Sorry, your browser does not support SVG.</object>  
+</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org1cc5415" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org1cc5415">Integrating Python and Rust</h2>
 <div class="column" style="float:left; width:50%">
 <p>
-<b>Advantages</b>
+<b>Python Side</b>
 </p>
 <ul>
-<li>Easy to learn</li>
-<li>Expressive</li>
-<li>Exisiting Libraries, e.g. numpy, matplotlib</li>
-<li>Interactive</li>
-<li>"Glue"</li>
+<li>Python 3.5</li>
+<li><a href="https://pypi.org/project/maturin/">Maturin</a>
+<ul>
+<li>Install using pip</li>
+
+</ul></li>
 
 </ul>
 </div>
 
 <div class="column" style="float:right; width:50%">
 <p>
-<b>Disadvantages</b>
+<b>Rust Side</b>
 </p>
 <ul>
-<li>Global Interpreter Lock</li>
-<li>"Slow"</li>
+<li><a href="https://github.com/PyO3/pyo3">PyO3</a> Crate</li>
 
 </ul>
-</div>
 
 </section>
 </section>
 <section>
-<section id="slide-org8fb0482" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="org8fb0482">Context: The Two-Language Problem</h2>
-<div class="column" style="float:left; width:50%">
-
-<div class="figure">
-<p><object type="image/svg+xml" data="./figures/julia.svg" class="org-svg" height="60%," width="60%">
-Sorry, your browser does not support SVG.</object> 
-</p>
+<section id="slide-orgdd4adda" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="orgdd4adda">Demo</h2>
 </div>
 
-
-<div class="figure">
-<p><object type="image/svg+xml" data="./figures/cython.svg" class="org-svg" height="120%," width="120%">
-Sorry, your browser does not support SVG.</object> 
-</p>
-</div>
-</div>
-
-<div class="column" style="float:left; width:50%">
-
-<div class="figure">
-<p><object type="image/svg+xml" data="./figures/numba.svg" class="org-svg" height="80%," width="80%">
-Sorry, your browser does not support SVG.</object> 
-</p>
-</div>
-</div>
-
-
-</section>
-</section>
-<section>
-<section id="slide-orgbfca0a3" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="orgbfca0a3">My Research</h2>
 <aside class="notes">
 <p>
 
@@ -275,6 +366,7 @@ extensive scientific models.
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
+hash: true,
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server
@@ -283,11 +375,7 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
 });
 </script>
 </body>

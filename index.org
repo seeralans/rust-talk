@@ -7,22 +7,24 @@
 #+REVEAL_TRANS: linear
 #+REVEAL_THEME: solarized
 #+REVEAL_HLEVEL: 2
-#+Title: Being Fierce: Native Python Modules With Rust
-#+Author: Seeralan Sarvaharman
-#+Email: s.sarvaharman@bristol.ac.uk
 # Local variables:
 # eval: (add-hook 'after-save-hook 'org-reveal-export-to-html  t t)
 # end:
 #+LATEX: \newcommand{\giv}{\,|\,} \newcommand{\arcosh}{\mathrm{arcosh}}
-
 #+reveal_title_slide_background: ./figures/rust-logo.svg
 #+reveal_title_slide_background_opacity: 0.05
 #+reveal_title_slide_background_REPEAT: repeat
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_INIT_OPTIONS: hash: true
 
 #+reveal_default_slide_background: ./figures/rust-logo.svg
 #+reveal_default_slide_background_OPACITy: 0.05
 #+reveal_default_slide_background_REPEAT: repeat
 #+REVEAL_EXTRA_CSS: local.css
+
+#+Title: Being Fierce: Native Python Modules With Rust
+#+Author: Seeralan Sarvaharman
+#+Email: s.sarvaharman@bristol.ac.uk
 
 * Overview
 - Context  
@@ -32,13 +34,57 @@
 - Examples
 
 
+* Python
+#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
+*Advantages*
+- Easy to learn
+- Expressive
+- Exisiting Libraries
+- Interactive
+- "Glue"
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="column" style="float:right; width:50%">
+*Disadvantages*
+- Global Interpreter Lock
+- "Slow"
+#+REVEAL_HTML: </div>
+
+
+* The Two-Language Problem
+  
+#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
+#+ATTR_HTML: :height 60%, :width 60%
+[[./figures/julia.svg]] 
+
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
+#+ATTR_HTML: :height 80%, :width 80%
+[[./figures/numba.svg]] 
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div id="cython" style="text-align:center">
+#+ATTR_HTML: :height 80%, :width 80%
+[[./figures/cython.svg]] 
+#+REVEAL_HTML: </div>
+
+
 * What is Rust?
 
-#+REVEAL_HTML: <div class="cbox" style="text-align:center;">
-  #+ATTR_HTML: :height 30%, :width 30%
+#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
+  #+ATTR_HTML: :height 50%, :width 50%
   [[./figures/moz.svg]] 
-  #+ATTR_HTML: :height 30%, :width 30%
+  #+ATTR_HTML: :height 50%, :width 50%
   [[./figures/firefox.svg]] 
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="column" style="float:right; width:50%">
+- Compiled
+- Static typing
+  - Inferred
+- Low-level
+
 #+REVEAL_HTML: </div>
   
 
@@ -55,110 +101,75 @@ confident that if your code compiles it will not crash unexpectedly.
 #+end_notes
 
 * Why Rust?
+#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
 - Fast
 - Memory Safety
 - Open Source
+#+REVEAL_HTML: </div>
+
+#+REVEAL_HTML: <div class="column" style="float:right; width:50%">
 - Multithreading
-- Shiny and New
+- No Garbage Collector
+- New and shiny
+#+REVEAL_HTML: </div>
 
 * Getting Started
 - Find it at [[https://www.rust-lang.org][rust.org]]
 
-- Install using rustup 
+- Install using [[https://rustup.rs/][rustup]]
 
 - RTFM: [[https://doc.rust-lang.org/book/][The Rust Book]]
 
 - [[https://doc.rust-lang.org/rust-by-example/][Rust by example]]
 
-- Cargo 
+* Hello World! 
 
 * Tooling
 - Building: Cargo
   - Rust's version of make
+- Package management: Cargo
+  - Rust's version of pip
+- Managing compiler versions: rustup
+  - Similar to python's virtual environments
 - Auto style formating: [[https://github.com/rust-lang/rustfmt][rustfmt]]
 - Auto completion [[https://github.com/racer-rust/racer][racer]]
 - Languge server: [[https://github.com/rust-lang/rls][rls]]
-  - [[https://microsoft.github.io/language-server-protocol/][Language Server Protocol]]
+*** [[https://microsoft.github.io/language-server-protocol/][Language Server Protocol]]
+
+
 
 * Stable Rust vs Nightly
-[[https://rust-lang.github.io/rustup-components-history][Rust tool status]]
+- We need nightly 
+- Occasionally tools and crates break 
+- [[https://rust-lang.github.io/rustup-components-history][Rust tool status]]
   
-* Python
-#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
-*Advantages*
-- Easy to learn
-- Expressive
-- Exisiting Libraries, e.g. numpy, matplotlib
-- Interactive
-- "Glue"
-#+REVEAL_HTML: </div>
-
-#+REVEAL_HTML: <div class="column" style="float:right; width:50%">
-*Disadvantages*
-- Global Interpreter Lock
-- "Slow"
-#+REVEAL_HTML: </div>
-
-* Context: The Two-Language Problem
-  
-#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
-#+ATTR_HTML: :height 60%, :width 60%
-[[./figures/julia.svg]] 
-
-#+ATTR_HTML: :height 120%, :width 120%
-[[./figures/cython.svg]] 
-#+REVEAL_HTML: </div>
-
-#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
-#+ATTR_HTML: :height 80%, :width 80%
-[[./figures/numba.svg]] 
-#+REVEAL_HTML: </div>
 
 
 * My Research
-#+begin_src jupyter-python :session rust-demo :results output :exports none
-import numpy as np
-import matplotlib.pyplot as pp
-pp.style.use(["default", "paper"])
+  :PROPERTIES:
+  :CUSTOM_ID: slide_1
+  :END:
 
-def coverage_sim(n0, p, N, num_trials):
+  #+ATTR_HTML: :height 50%, :width 50% 
+  [[./figures/diagram.svg]]  
 
-  trial_times = np.zeros(num_trials)
-  for trial in range(num_trials):
-    visits = np.zeros(N)
-    current_pos = n0
-    visits[current_pos-1] += 1
-    time = 0
-    while not visits.all() > 0:
-      # draw a random number
-      val = np.random.rand()
-      # stay put
-      if val < 1 - p:
-        continue
-      # mobe to the left
-      elif val < 1 - p/2:
-        current_pos -= 1
-      #move to the right
-      else:
-        current_pos += 1;
 
-      # boundary checks
-      if current_pos < 1:
-        current_pos += 1
-      elif current_pos > N:
-        current_pos  -= 1
-      # increment visit
-      visits[current_pos-1] += 1
-      # increment time
-      time += 1
-    trial_times[trial] = time
-  return trial_times
+* Integrating Python and Rust
 
-pp.hist(coverage_sim(3, 0.3, 8, 100), bins=100)
-#+end_src
+#+REVEAL_HTML: <div class="column" style="float:left; width:50%">
+*Python Side*
+- Python 3.5
+- [[https://pypi.org/project/maturin/][Maturin]]
+  - Install using pip
+#+REVEAL_HTML: </div>
 
-#+RESULTS:
-[[file:./.ob-jupyter/36bb1327f1c1b4675e4f45e6d5f6f00122b08dd4.png]]
+#+REVEAL_HTML: <div class="column" style="float:right; width:50%">
+*Rust Side*
+- [[https://github.com/PyO3/pyo3][PyO3]] Crate
+  
+* Demo
+
+#+REVEAL_HTML: </div>
 
 #+begin_notes
 
