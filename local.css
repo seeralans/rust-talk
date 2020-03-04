@@ -1,4 +1,4 @@
-.reveal p {
+.reveal  {
     text-align: left;
 }
 .reveal ol,
@@ -6,6 +6,7 @@
 .reveal ul {
   display: block;
   text-align: left;
+  font-weight: 400;
   margin: 0 0 0 1em; }
 
 circle.active {
@@ -30,6 +31,32 @@ circle#cpos {
 }
 
 
-.cbox {
+.reveal.cbox {
     margin: 500 0 0 0 ;
+}
+
+p.centerme {
+    text-align: center;
+}
+
+
+.reveal {
+    font-family: 'HK Grotesk', "Lato", sans-serif;
+}
+
+#test12 {
+    fill: #32320f;
+}
+
+.reveal.centerme {
+    
+}
+
+#slide_1 {
+    text-align: center;
+    
+}
+
+#cython {
+    text-align: center;
 }
