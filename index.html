@@ -28,43 +28,39 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05"><h1 class="title">Being Fierce: Native Python Modules With Rust</h1><h2 class="author">Seeralan Sarvaharman</h2><p class="date">Created: 2020-03-04 Wed 17:12</p>
+<section id="sec-title-slide" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05"><h1 class="title">Being Fierce: Native Python Modules With Rust</h1><h2 class="author">Seeralan Sarvaharman</h2><p class="date">Created: 2020-03-04 Wed 17:35</p>
 </section>
 
-
-
 <section>
-<section id="slide-org8829e70" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="org8829e70">What is Rust?</h2>
+<section id="slide-org0e8817c" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org0e8817c">Overview</h2>
+<ul>
+<li>Context</li>
+<li>What is Rust?</li>
+<li>Getting started</li>
+<li>Integrating Python and Rust</li>
+<li>Examples</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org0a47b10" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org0a47b10">What is Rust?</h2>
 <div class="cbox" style="text-align:center;">
-<div class="column" style="float:left; width:50%; margin:auto">
 
 <div class="figure">
-<p><object type="image/svg+xml" data="./figures/moz.svg" class="org-svg" height="50%," width="50%">
+<p><object type="image/svg+xml" data="./figures/moz.svg" class="org-svg" height="30%," width="30%">
 Sorry, your browser does not support SVG.</object> 
 </p>
 </div>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="./figures/firefox.svg" class="org-svg" height="50%," width="50%">
+<p><object type="image/svg+xml" data="./figures/firefox.svg" class="org-svg" height="30%," width="30%">
 Sorry, your browser does not support SVG.</object> 
 </p>
-</div>
-</div>
-
-<div class="column" style="float:right; width:50%; margin:auto">
-
-<div class="figure">
-<p><object type="image/svg+xml" data="./figures/firefox.svg" class="org-svg" height="50%," width="50%">
-Sorry, your browser does not support SVG.</object> 
-</p>
-</div>
-
-<div class="figure">
-<p><object type="image/svg+xml" data="./figures/moz.svg" class="org-svg" height="50%," width="50%">
-Sorry, your browser does not support SVG.</object> 
-</p>
-</div>
 </div>
 </div>
 
@@ -90,12 +86,13 @@ confident that if your code compiles it will not crash unexpectedly.
 </section>
 </section>
 <section>
-<section id="slide-orge9800b2" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="orge9800b2">Why Rust?</h2>
+<section id="slide-orgb853ef6" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="orgb853ef6">Why Rust?</h2>
 <ul>
 <li>Fast</li>
 <li>Memory Safety</li>
 <li>Open Source</li>
+<li>Multithreading</li>
 <li>Shiny and New</li>
 
 </ul>
@@ -103,8 +100,8 @@ confident that if your code compiles it will not crash unexpectedly.
 </section>
 </section>
 <section>
-<section id="slide-orgb7084cf" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="orgb7084cf">Getting Started</h2>
+<section id="slide-orgec3572b" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="orgec3572b">Getting Started</h2>
 <ul>
 <li>Find it at <a href="https://www.rust-lang.org">rust.org</a></li>
 
@@ -121,8 +118,8 @@ confident that if your code compiles it will not crash unexpectedly.
 </section>
 </section>
 <section>
-<section id="slide-org1d2fb02" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="org1d2fb02">Tooling</h2>
+<section id="slide-org6702948" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org6702948">Tooling</h2>
 <ul>
 <li>Building: Cargo
 <ul>
@@ -142,8 +139,8 @@ confident that if your code compiles it will not crash unexpectedly.
 </section>
 </section>
 <section>
-<section id="slide-orge52c304" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="orge52c304">Stable Rust vs Nightly</h2>
+<section id="slide-org17b6a5e" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org17b6a5e">Stable Rust vs Nightly</h2>
 <p>
 <a href="https://rust-lang.github.io/rustup-components-history">Rust tool status</a>
 </p>
@@ -151,8 +148,8 @@ confident that if your code compiles it will not crash unexpectedly.
 </section>
 </section>
 <section>
-<section id="slide-orgde3c216" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="orgde3c216">Python</h2>
+<section id="slide-org809e0e5" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org809e0e5">Python</h2>
 <div class="column" style="float:left; width:50%">
 <p>
 <b>Advantages</b>
@@ -181,8 +178,8 @@ confident that if your code compiles it will not crash unexpectedly.
 </section>
 </section>
 <section>
-<section id="slide-orga6bc58a" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="orga6bc58a">Context: The Two-Language Problem</h2>
+<section id="slide-org8fb0482" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org8fb0482">Context: The Two-Language Problem</h2>
 <div class="column" style="float:left; width:50%">
 
 <div class="figure">
@@ -212,8 +209,8 @@ Sorry, your browser does not support SVG.</object>
 </section>
 </section>
 <section>
-<section id="slide-orgfca9abe" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
-<h2 id="orgfca9abe">My Research</h2>
+<section id="slide-orgbfca0a3" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="orgbfca0a3">My Research</h2>
 <aside class="notes">
 <p>
 

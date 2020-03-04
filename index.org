@@ -3,7 +3,7 @@
 # eval: (add-hook 'after-save-hook 'org-reveal-export-to-html  t t)
 # end:
 #+LATEX: \newcommand{\giv}{\,|\,} \newcommand{\arcosh}{\mathrm{arcosh}}
-#+OPTIONS: num:nil toc:nil
+#+OPTIONS: num:nil toc:nil date:nil
 #+REVEAL_TRANS: linear
 #+REVEAL_THEME: solarized
 #+REVEAL_HLEVEL: 2
@@ -24,24 +24,21 @@
 #+reveal_default_slide_background_REPEAT: repeat
 #+REVEAL_EXTRA_CSS: local.css
 
+* Overview
+- Context  
+- What is Rust?
+- Getting started
+- Integrating Python and Rust
+- Examples
 
 
 * What is Rust?
 
 #+REVEAL_HTML: <div class="cbox" style="text-align:center;">
-  #+REVEAL_HTML: <div class="column" style="float:left; width:50%; margin:auto">
-  #+ATTR_HTML: :height 50%, :width 50%
+  #+ATTR_HTML: :height 30%, :width 30%
   [[./figures/moz.svg]] 
-  #+ATTR_HTML: :height 50%, :width 50%
+  #+ATTR_HTML: :height 30%, :width 30%
   [[./figures/firefox.svg]] 
-  #+REVEAL_HTML: </div>
-
-  #+REVEAL_HTML: <div class="column" style="float:right; width:50%; margin:auto">
-  #+ATTR_HTML: :height 50%, :width 50%
-  [[./figures/firefox.svg]] 
-  #+ATTR_HTML: :height 50%, :width 50%
-  [[./figures/moz.svg]] 
-  #+REVEAL_HTML: </div>
 #+REVEAL_HTML: </div>
   
 
@@ -61,6 +58,7 @@ confident that if your code compiles it will not crash unexpectedly.
 - Fast
 - Memory Safety
 - Open Source
+- Multithreading
 - Shiny and New
 
 * Getting Started
