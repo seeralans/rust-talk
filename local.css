@@ -1,0 +1,35 @@
+.reveal p {
+    text-align: left;
+}
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: block;
+  text-align: left;
+  margin: 0 0 0 1em; }
+
+circle.active {
+    fill: #fdf4c1;
+}
+
+circle.unactive {
+    fill: #32302f;
+}
+
+circle.active {
+  fill: #7c6f64
+}
+
+circle.unactive {
+    fill: #32302f;
+}
+
+circle#cpos {
+    fill: #fdf4c1;
+
+}
+
+
+.cbox {
+    margin: 500 0 0 0 ;
+}

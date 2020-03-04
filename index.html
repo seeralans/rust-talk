@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Being Fierce: Native Python Modules With Rust</title>
+<meta name="author" content="(Seeralan Sarvaharman)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/solarized.css" id="theme"/>
+
+<link rel="stylesheet" href="local.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05"><h1 class="title">Being Fierce: Native Python Modules With Rust</h1><h2 class="author">Seeralan Sarvaharman</h2><p class="date">Created: 2020-03-04 Wed 17:12</p>
+</section>
+
+
+
+<section>
+<section id="slide-org8829e70" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org8829e70">What is Rust?</h2>
+<div class="cbox" style="text-align:center;">
+<div class="column" style="float:left; width:50%; margin:auto">
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./figures/moz.svg" class="org-svg" height="50%," width="50%">
+Sorry, your browser does not support SVG.</object> 
+</p>
+</div>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./figures/firefox.svg" class="org-svg" height="50%," width="50%">
+Sorry, your browser does not support SVG.</object> 
+</p>
+</div>
+</div>
+
+<div class="column" style="float:right; width:50%; margin:auto">
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./figures/firefox.svg" class="org-svg" height="50%," width="50%">
+Sorry, your browser does not support SVG.</object> 
+</p>
+</div>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./figures/moz.svg" class="org-svg" height="50%," width="50%">
+Sorry, your browser does not support SVG.</object> 
+</p>
+</div>
+</div>
+</div>
+
+
+
+<aside class="notes">
+<p>
+Rust is a compiled, strongly typed language.
+It is similar to C/C++, in that your code is compiled down to machine
+</p>
+
+<p>
+And like C/C++ its is very fast.
+</p>
+
+<p>
+But unlike C/C++ rust is very safe, it doesn't crash so you can be
+confident that if your code compiles it will not crash unexpectedly.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orge9800b2" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="orge9800b2">Why Rust?</h2>
+<ul>
+<li>Fast</li>
+<li>Memory Safety</li>
+<li>Open Source</li>
+<li>Shiny and New</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb7084cf" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="orgb7084cf">Getting Started</h2>
+<ul>
+<li>Find it at <a href="https://www.rust-lang.org">rust.org</a></li>
+
+<li>Install using rustup</li>
+
+<li>RTFM: <a href="https://doc.rust-lang.org/book/">The Rust Book</a></li>
+
+<li><a href="https://doc.rust-lang.org/rust-by-example/">Rust by example</a></li>
+
+<li>Cargo</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org1d2fb02" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="org1d2fb02">Tooling</h2>
+<ul>
+<li>Building: Cargo
+<ul>
+<li>Rust's version of make</li>
+
+</ul></li>
+<li>Auto style formating: <a href="https://github.com/rust-lang/rustfmt">rustfmt</a></li>
+<li>Auto completion <a href="https://github.com/racer-rust/racer">racer</a></li>
+<li>Languge server: <a href="https://github.com/rust-lang/rls">rls</a>
+<ul>
+<li><a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a></li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge52c304" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="orge52c304">Stable Rust vs Nightly</h2>
+<p>
+<a href="https://rust-lang.github.io/rustup-components-history">Rust tool status</a>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgde3c216" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="orgde3c216">Python</h2>
+<div class="column" style="float:left; width:50%">
+<p>
+<b>Advantages</b>
+</p>
+<ul>
+<li>Easy to learn</li>
+<li>Expressive</li>
+<li>Exisiting Libraries, e.g. numpy, matplotlib</li>
+<li>Interactive</li>
+<li>"Glue"</li>
+
+</ul>
+</div>
+
+<div class="column" style="float:right; width:50%">
+<p>
+<b>Disadvantages</b>
+</p>
+<ul>
+<li>Global Interpreter Lock</li>
+<li>"Slow"</li>
+
+</ul>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga6bc58a" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="orga6bc58a">Context: The Two-Language Problem</h2>
+<div class="column" style="float:left; width:50%">
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./figures/julia.svg" class="org-svg" height="60%," width="60%">
+Sorry, your browser does not support SVG.</object> 
+</p>
+</div>
+
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./figures/cython.svg" class="org-svg" height="120%," width="120%">
+Sorry, your browser does not support SVG.</object> 
+</p>
+</div>
+</div>
+
+<div class="column" style="float:left; width:50%">
+
+<div class="figure">
+<p><object type="image/svg+xml" data="./figures/numba.svg" class="org-svg" height="80%," width="80%">
+Sorry, your browser does not support SVG.</object> 
+</p>
+</div>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgfca9abe" data-background="./figures/rust-logo.svg" data-background-repeat="repeat" data-background-opacity="0.05">
+<h2 id="orgfca9abe">My Research</h2>
+<aside class="notes">
+<p>
+
+</p>
+
+<p>
+pip install maturin matplotlib numpy ipython PyQt5
+</p>
+
+
+
+
+<div>
+\begin{equation}
+ 2 + \oint \frac{\mathrm{d}}{\mathrm{d} z}  \frac{f(z)}{\sigma - z} 
+\end{equation}
+
+</div>
+
+<p>
+Being Fierce: Native Python Modules With Rust
+</p>
+
+
+
+<p>
+As researchers we spend most of our time exploring. Dynamic
+programming expressive languages such as python or matlab give us the
+freedom to spend time solving the problem instead
+of wasting time with programming itself. At some point we want to turn
+our hacky exploratory code into something less hacky that we might use
+again or worse share. If we want
+something fast and we often have to rewrite our code in a compiled
+language like C/C++ at the cost of the exploratory freedom of
+python. This is the so-called two language problem, as
+researchers we want both the exploratory nature and the rapid
+prototyping of a language like python with the fast runtime of a
+compiled language.
+</p>
+
+
+
+<p>
+Rust is the new darling of compiled programming languages. Being
+designed from the ground up for modern computers, it aims to eliminate
+the problems that we often face when writing
+in languages such as C/C++. During the talk I will present a solution
+to the two-language problem. By writing python modules in Rust, we can
+leverage the efficiency and speed of running
+native code with all the benefits of python's dynamism and its
+extensive scientific models.
+</p>
+
+</aside>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
